@@ -1,5 +1,6 @@
 import React, { useState, useRef, PropsWithChildren } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
+import { ThemeProps, useTheme } from 'styled-components';
 
 import Input, { InputProps } from './';
 import { InputContainer } from './styled';
@@ -170,7 +171,8 @@ interface CustomInputContainerProps {
 }
 
 const CustomInputContainer: React.FC<PropsWithChildren<CustomInputContainerProps>> = ({ status, children }: PropsWithChildren<CustomInputContainerProps>) => {
-  let backgroundColor = '#f9f9f9';
+  const theme: any = useTheme();
+  let backgroundColor = theme.colors.inputContainer;
 
   if (status === 1) {
     backgroundColor = '#daffda';

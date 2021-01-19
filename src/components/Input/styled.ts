@@ -5,20 +5,26 @@ import clearIcon from '../assets/clear.svg';
 
 export const InputContainer = styled.div`
   box-sizing: border-box;
+  display: block;
+  position: relative;
+
+  background-color: ${props => props.theme.colors.inputContainer};
+
+  margin: 8px;
+  width: calc(100% - 16px);
   border-radius: 4px;
   padding: 5px 10px 10px;
-  background-color: #f9f9f9;
-  display: block;
-  width: calc(100% - 16px);
-  position: relative;
-  margin: 8px;
 `;
 
 export const InputLabel = styled.div`
-  font-size: 12px;
-  line-height: 18px;
-  color: #a5a5a5;
   margin-bottom: 5px;
+
+  color: ${props => props.theme.colors.label};
+
+  font-family: ${props => props.theme.fonts.family};
+  font-size: ${props => props.theme.fonts.small.size};
+  line-height: ${props => props.theme.fonts.small.lineHeight};
+  font-weight: ${props => props.theme.fonts.small.weight};
 `;
 
 export const InputElementContainer = styled.div`
@@ -50,27 +56,33 @@ interface AddInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const InputElement = styled.input`
-  font-size: 14px;
   line-height: 28px;
   height: 28px;
   padding: 7px ${({ showClearButton }: AddInputProps) => (showClearButton ? '24px' : '5px')} 7px 5px;
-  color: #5a5a5a;
   width: 100%;
-  border: 1px solid #dadada;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 4px;
-  background: #fff;
   box-sizing: border-box;
 
+  background: ${props => props.theme.colors.inputBackground};
+  color: ${props => props.theme.colors.input};
+  border-color: ${props => props.theme.colors.border};
+
+  font-family: ${props => props.theme.fonts.family};
+  font-size: ${props => props.theme.fonts.normal.size};
+  font-weight: ${props => props.theme.fonts.normal.weight};
+
   ::placeholder {
-    color: #a5a5a5;
+    color: ${props => props.theme.colors.placeholder};
   }
 
   :focus {
     outline: none;
-    border: 1px solid #5a5a5a;
+    border-color: ${props => props.theme.colors.input};
   }
 
   :disabled {
-    background: #f9f9f9;
+    background-color: ${props => props.theme.colors.inputContainer};
   }
 `;

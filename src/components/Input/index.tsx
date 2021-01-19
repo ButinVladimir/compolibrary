@@ -8,10 +8,10 @@ import {
   InputElement,
 } from './styled';
 
-export interface InputProps<CP = any> extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps<CP = any, LP = any> extends InputHTMLAttributes<HTMLInputElement> {
   containerComponent?: ComponentType<PropsWithChildren<CP>>,
   containerProps?: CP,
-  label: ReactElement<any> | string,
+  label: ReactElement<LP> | string,
   showClearButton?: boolean,
   onClear?: (event: React.FormEvent<HTMLButtonElement>) => void,
 }
