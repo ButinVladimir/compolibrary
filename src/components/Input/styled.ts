@@ -1,5 +1,6 @@
-import { InputHTMLAttributes } from 'react';
-import styled from 'styled-components';
+import styled, { ThemedStyledFunction } from 'styled-components';
+
+import { InputElementProps } from './props';
 
 import clearIcon from '../assets/clear.svg';
 
@@ -51,22 +52,19 @@ export const InputClearButton = styled.button.attrs(() => ({
   }
 `;
 
-interface AddInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  showClearButton: boolean,
-}
-
 export const InputElement = styled.input`
   line-height: 28px;
   height: 28px;
-  padding: 7px ${({ showClearButton }: AddInputProps) => (showClearButton ? '24px' : '5px')} 7px 5px;
+  padding: 7px ${({ showClearButton }: InputElementProps) => (showClearButton ? '24px' : '5px')} 7px 5px;
   width: 100%;
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
   box-sizing: border-box;
+  outline: none;
 
-  background: ${props => props.theme.colors.inputBackground};
-  color: ${props => props.theme.colors.input};
+  background: ${props => props.theme.colors.themeBackground};
+  color: ${props => props.theme.colors.text};
   border-color: ${props => props.theme.colors.border};
 
   font-family: ${props => props.theme.fonts.family};
@@ -78,8 +76,7 @@ export const InputElement = styled.input`
   }
 
   :focus {
-    outline: none;
-    border-color: ${props => props.theme.colors.input};
+    border-color: ${props => props.theme.colors.focus};
   }
 
   :disabled {

@@ -1,5 +1,6 @@
-import React, { FC, InputHTMLAttributes, ComponentType, ReactElement, forwardRef, PropsWithRef, PropsWithChildren } from 'react';
+import React, { FC, ReactElement, forwardRef, PropsWithRef } from 'react';
 
+import { InputProps } from './props';
 import {
   InputContainer,
   InputLabel,
@@ -7,14 +8,6 @@ import {
   InputClearButton,
   InputElement,
 } from './styled';
-
-export interface InputProps<CP = any, LP = any> extends InputHTMLAttributes<HTMLInputElement> {
-  containerComponent?: ComponentType<PropsWithChildren<CP>>,
-  containerProps?: CP,
-  label: ReactElement<LP> | string,
-  showClearButton?: boolean,
-  onClear?: (event: React.FormEvent<HTMLButtonElement>) => void,
-}
 
 const Input: FC<PropsWithRef<InputProps>> = forwardRef<HTMLInputElement, InputProps>((
   {

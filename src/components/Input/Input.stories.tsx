@@ -1,8 +1,10 @@
 import React, { useState, useRef, PropsWithChildren } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ThemeProps, useTheme } from 'styled-components';
+import { useTheme } from 'styled-components';
 
-import Input, { InputProps } from './';
+import Input from './';
+import Button from '../Button';
+import { InputProps } from './props';
 import { InputContainer } from './styled';
 
 export default {
@@ -117,9 +119,9 @@ export const WithCustomLabel: Story<InputProps> = ({ placeholder, maxLength, dis
   return (
     <Input
       label={(
-        <button type="button" onClick={handleLabelClick}>
+        <Button type="button" onClick={handleLabelClick} style={{ margin: 0 }}>
           Set random number
-        </button>
+        </Button>
       )}
       placeholder={placeholder}
       maxLength={maxLength}

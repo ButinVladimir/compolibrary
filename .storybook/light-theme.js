@@ -2,10 +2,13 @@ export const light = {
   colors: {
     inputContainer: '#f9f9f9',
     label: '#a5a5a5',
-    border: '#dadada',
-    input: '#5a5a5a',
+    border: '#bababa',
+    focus: '#a2a2a2',
+    text: '#5a5a5a',
     placeholder: '#a5a5b5',
-    inputBackground: '#fff',
+    themeBackground: '#fff',
+    accept: '#79bf79',
+    decline: '#ff7979',
   },
   fonts: {
     family: 'Arial, Helvetica, sans-serif',
