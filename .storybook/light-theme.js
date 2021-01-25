@@ -7,6 +7,8 @@ export const light = {
     text: '#5a5a5a',
     placeholder: '#a5a5b5',
     themeBackground: '#fff',
+    backdrop: 'rgba(0,0,0,0.4)',
+    modal: '#fff',
     accept: '#79bf79',
     decline: '#ff7979',
   },

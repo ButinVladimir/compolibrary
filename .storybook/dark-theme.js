@@ -7,6 +7,8 @@ export const dark = {
     text: '#eaeaea',
     placeholder: '#b9b9b9',
     themeBackground: '#000',
+    backdrop: 'rgba(0,0,0,0.4)',
+    modal: '#333',
     accept: '#79bf79',
     decline: '#ff7979',
   },
