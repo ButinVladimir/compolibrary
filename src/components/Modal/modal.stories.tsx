@@ -98,7 +98,15 @@ const NestedModal: FC<NestedModalProps> = ({ containerId, number, onClose }: Nes
   };
 
   return (
-    <Modal containerId={containerId} onClose={onClose} style={{ padding: 30 }}>
+    <Modal
+      containerId={containerId}
+      style={{
+        padding: 30,
+        width: `calc(100% - 30px - ${number * 100}px)`,
+        height: `calc(100% - 30px - ${number * 100}px)`,
+      }}
+      onClose={onClose}
+    >
       <div style={{ padding: 5 }}>
         Modal number: {number}
       </div>

@@ -17,7 +17,24 @@ const Modal: FC<ModalProps> = ({
   useEffect(() => {
     onOpenModal();
 
-    return () => onCloseModal();
+    return () => {
+      onCloseModal();
+    };
+  });
+
+  useEffect(() => {
+    const handleKeyUp = (event: KeyboardEvent) => {
+      if (event.key === ESCAPE_KEY) {
+        event.stopImmediatePropagation();
+
+        onClose();
+      }
+    };
+    document.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      document.removeEventListener('keyup', handleKeyUp);
+    };
   });
 
   if (!container) {
@@ -38,3 +55,5 @@ const Modal: FC<ModalProps> = ({
 };
 
 export default Modal;
+
+const ESCAPE_KEY = 'Escape';
